@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EDS STORE</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: aqua;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgb(5, 245, 245);
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        h1{
+            color: #ffffff;
+        }
+        h2{
+            background-color: none;
+            padding: 5%;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+        nav, ul, li {
+            color: white;
+            text-decoration: none;
+        }
+        .produit-tm {
+            border: 1px solid #00c3ff;
+            border-radius: 20px;
+            padding: 1rem;
+            margin: 15%;
+            /* width: calc(33.50% - 0rem);
+            box-sizing: border-box;
+            font-display: inline-block; */
+            width: 60%;
+        }
+       .produit-tm img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        } 
+        h4{
+            background-color: #0bb4ac;
+            border-radius: 10px;
+            padding: 3%;
+            text-align: center;
+        }
+        h5{
+            padding: 3%;
+        }
+
+         /* code css au JAVA SRIPT */
+         .ajouter {
+            background-color: #252421;
+            color: #f0cccc;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+         .cmd {
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+            background-color: #252421;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .cmd{
+            text-align: left;
+            width: fit-content;
+            }
+
+        #cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 14px;
+            }
+        .mob{
+            text-align: center;
+        }
+        .tm1 {
+            display: flex;
+            justify-content: center;
+            background-color: none;
+            color: #fff;
+            padding: 10px;
+            position: flex;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+        }
+        .close-btn {
+            background-color: #252421;
+            color: #ffffff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            }
+        .cart-container {
+            color: black;
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .cart-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="tete">
+                <div class="cmd" onclick="toggleCart()">Panier <span id="cart-count">0</span></div>
+            </div>
+            <div id="cart-container" class="cart-container">
+                <div id="cart-items"></div>
+                <button class="close-btn" onclick="toggleCart()">Fermer</button>
+            </div>
+        </header>
+        <div class="produit-tm">
+            <img src="gifcard.jpg" alt="GIFT CARD">
+            <h3>GIFT Card</h3>
+            <p> PRIX MIN <EM>2000 <STROng>gourdes</STROng></EM></p>
+            <p> PRIX MAX <EM>5000 <STROng>gourdes</STROng></EM></p>
+
+            <h5>wap ka peye e itilize kat sa sou tout platfom yo ap resevwal, wap selman peye kat sa selon kantite kob wap bezwen souli a, kat sa li pi rapid, e ou pap bezwen kenn pyes pouw  fel</h5>
+            <div class="mob">
+                <button class="ajouter" onclick="addToCart('Netflix', 450)">Ajouter dans le panier</button>
+            </div>
+            <!-- <h4><a href="https//wa.me/qr/EKXWOFCD7OYQH1">achter le produit</a></h4> -->
+        </div>
+
+        <script>
+            let cart = [];
+            
+            function addToCart(productName, productPrice) {
+                cart.push({ name: productName, price: productPrice });
+                document.getElementById('cart-count').textContent = cart.length;
+            }
+
+            function toggleCart() {
+                const cartContainer = document.getElementById('cart-container');
+                const cartItems = document.getElementById('cart-items');
+                if (cartContainer.style.display === 'none' || cartContainer.style.display === '') {
+                    cartItems.innerHTML = '';
+                    cart.forEach((item, index) => {
+                        cartItems.innerHTML += `<div class="cart-item">${item.name} - ${item.price} G</div>`;
+                    });
+                    cartContainer.style.display = 'block';
+                } else {
+                    cartContainer.style.display = 'none';
+                }
+            }
+        </script>
+    </body>
+</html>

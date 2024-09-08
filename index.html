@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EASY DEAL STORE</title>
+    </head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #002a52;
+            /* background: url(logo-EDS.PNG) center; */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #ddd;
+            /* height: 1000%;
+            width: 100%; */
+        }
+
+                /* code aniomation pour les class que je nommer p1 a p2 (habillement) */
+
+        .p1{
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid aqua;
+            border-radius: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .p2{
+            display: flex;
+            width: 300px;
+            animation: slide 40s infinite;
+        }
+        .p2 img{
+            width: 100px;
+            border-right: 2px solid aqua;
+            border-left: 1px solid rgb(255, 187, 0);
+
+        }
+        @keyframes slide {
+            0% {transform: translateX(-10%); }
+            33% {transform: translateX(-100%); }
+            66% {transform: translateX(-200%); }
+            100% {transform: translateX(0%); }
+        }
+        .le{
+            /* font-family: 'calibri', sans-serif; */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+            /* code aniomation pour les class que je nommer p3 a p4 (carte virtuelle) */
+        .p3{
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid none;
+            border-radius: 0 4px 10px;
+        }
+        .p4{
+            display: flex;
+            width: 300px;
+            animation: slide 30s infinite;
+        }
+        .p4 img{
+            width: 100px;
+            border-right: 2px solid aqua;
+            border-left: 1px solid rgb(255, 187, 0);
+
+        }
+        @keyframes slide {
+            10% {transform: translateX(-10%); }
+            33% {transform: translateX(100%); }
+            66% {transform: translateX(-90%); }
+            100% {transform: translateX(0%); }
+        }
+
+            /* code aniomation pour les class que je nommer p5 a p6  (streaming)*/
+        .p5{
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #7237fc;
+            border-radius: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .p6{
+            display: flex;
+            width: 300px;
+            animation: slide 35s infinite;
+        }
+        .p6 img{
+            width: 100px;
+            border-right: 2px solid aqua;
+            border-left: 1px solid rgb(255, 187, 0);
+
+        }
+        @keyframes slide {
+            10% {transform: translateX(-10%); }
+            33% {transform: translateX(40%); }
+            66% {transform: translateX(-60%); }
+            100% {transform: translateX(20%); }
+        }
+            /* background de l'entet (header) */
+        aside{
+            background-color: #2d1b57;
+            box-shadow: 80px;
+            border-radius: 20px 30%;
+            padding:0%;
+            margin: 0px;
+        }
+        header {
+            background-color: #18014d;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .allp{
+            background-color: blue;
+            height: 290px;
+            width: 500px;
+        }
+        .mark{
+            height: auto;
+            width: 500px;
+        }
+            /* .tm{
+                padding: 0px;
+                margin: auto;
+                text-align: right;
+                height: 0px;
+                padding: 0%;
+                margin: 8px;
+            } */
+        nav ul li {
+            display: inline;
+            margin: 3rem;
+            text-align: center;
+        }
+      
+        nav, ul, li, a {
+            color: white;
+            text-decoration: none;
+        }
+        h4, h2{
+            text-align: center;
+        }
+        button{
+            background-color: #17004e;
+            /* color: aqua; */
+            border-radius: 40%;
+            height: 30px;
+            width: 70px;
+        }
+        .p1, .p3, .p5{
+            border-radius: 5px;
+            border: none;
+        }
+        img{
+            border-radius: 19px;
+            border: none;
+            margin: 3px;
+            padding: 5px;
+            background-color: none;
+        }
+    </style>
+    <body>
+        <header>
+            <aside>
+                <marquee behavior="altetrnate" direction="left" scrollamount="3" >
+                <h1>EASY DEAL SHOP</h1>
+                </marquee>
+            </aside>
+            <nav>
+                <ul>
+                    <!-- <li><a href="index.html">Accueil</a></li> -->
+                    <li><a href="produits.html">apropos de nous</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="le">
+            <h2>trouvez notre service dans plus que 15 ville</h2>
+
+        </div>
+
+        <br>
+            <h4>nous faisons de notre mieux pour que chez nous devient votre  monde, votre maison</h4>
+        
+            <!-- <div class="p1">
+                <div class="p2">
+                <img src="P57.jpg" alt="">
+                <img src="P58.jpg" alt="">
+                <img src="P63.jpg" alt="">                    
+                <img src="P79.jpg" alt="">
+                <img src="P12.jpg" alt="">
+                <img src="P41.jpg" alt="">
+                <img src="P55.jpg" alt="">
+                </div>
+            </div>
+        </div> -->
+        <h2><button><a href="EDS.html">Continuer</a></button></h2>
+
+        <br><br>
+        <h4>et aussi nous offre une service de creation de carte chez nous, pour rendre votre vie plus facile</h4>
+
+        <div>
+            <div class="p3">
+            <div class="p4">
+            <img src="MC.jpg" alt="">
+            <img src="paypal.png" alt="">
+            <img src="visa.jpg" alt="">                    
+            <img src="gifcard.jpg" alt="">
+            </div>
+        </div>  
+        </div>
+
+        <h4>Des abonements de streaming vous attends, etes vous partant de faire cette voyage avec nos super prix d'abonement, et trouver toutes vos series disonible</h4>
+
+        <div class="p5">
+            <div class="p6">
+            <img src="crunchyroll.jpeg" alt="">
+            <img src="freefire.png" alt="">
+            <img src="prime1.png" alt="">                    
+            <img src="Spotify.jpg" alt="">
+            <img src="youtube.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- <h4>veuillez cliquez si dessous pour decouvrir dans notre monde</h4> -->
+        <footer>
+            <header>
+                <nav>
+                    <ul>
+                        <h6>
+                            <li>@True-manno</li>
+                            <li>store 2024</li>
+                        </h6>
+                    </ul>
+                </nav>
+            </header>
+        </footer>
+    </body>
+</html>

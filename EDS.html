@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EDS</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: url(logo-EDS.PNG);
+                color: #000000;
+                margin: 0;
+                padding: 0;
+                /* background: linear-gradient(to right, white, aqua, white, aqua, white); */
+            }
+            .widget{
+                color: #ffffff;
+            }
+            .container {
+                padding: 20px;
+            }
+            .tete {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .nameEDS {
+                border: 2px solid transparent;
+                padding: 5px 10px;
+                font-size: 24px;
+                font-weight: bold;
+                animation: rainbow-border 15s linear infinite;
+            }
+            @keyframes rainbow-border {
+                0% { border-color: red; }
+                5% { border-color: rgb(247, 0, 255); }
+                10% { border-color: rgb(230, 230, 230); }
+                13% { border-color: rgb(204, 0, 255); }
+                14% { border-color: orange; }
+                28% { border-color: yellow; }
+                42% { border-color: green; }
+                56% { border-color: blue; }
+                70% { border-color: indigo; }
+                84% { border-color: violet; }
+                85% { border-color: rgb(12, 211, 95); }
+                100% { border-color: red; }
+            }
+            /* code pour jouer toutes les produit */
+            .nos-produits {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                margin-top: 20px;
+            }
+            .produis {
+                background: linear-gradient(to right, #17004e, #3101a1, #17004e);
+                padding: 15px;
+                border-radius: 8px;
+                text-align: center;
+            }
+            .produis img {
+                width: 100%;
+                border-radius: 8px;
+            }
+            .tp {
+                margin: 10px 0;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .prix {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .infos {
+                color: #2a98e0;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            /* code pour donne couleur au bouton dajouter au ... */
+            .ajouter {
+                background-color: #252421;
+                color: #f0cccc;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            .cmd {
+                font-size: 24px;
+                cursor: pointer;
+                position: relative;
+                background-color: #252421;
+                color: #ffffff;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            #cart-count {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                background-color: red;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 50%;
+                font-size: 14px;
+            }
+            .cart-container {
+                display: none;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                width: 300px;
+                background-color: white;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 10px;
+                z-index: 1000;
+            }
+            .cart-item {
+                margin-bottom: 10px;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .close-btn {
+                background-color: #252421;
+                color: #ffffff;
+                padding: 5px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+            .LOGO-EDS {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .tm1 {
+                display: flex;
+                justify-content: center;
+                background-color: none;
+                color: #fff;
+                padding: 10px;
+                position: flex;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+            }
+            .LOGO-EDS {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .tm {
+                margin-top: 0px;
+                padding: 20px;
+            }
+            .logo {
+                max-width: 150px;
+                width: 30%;
+                object-fit: contain;
+                border-radius: 50%;
+                border: 2px solid #00d9ff;
+            }
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tm">
+            <div class="tete">
+                <!-- <div class="nameEDS">EASY.DEAL SHOP</div> -->
+                <div class="cmd" onclick="toggleCart()">Panier <span id="cart-count">0</span></div>
+                <h1 class="widget" id="widget">...</h1>
+            </div>
+            <div class="tm1">
+                <div class="LOGO-EDS">
+                    <img src="logo-EDS.PNG" alt="EDS" class="logo">
+                </div>
+            </div>
+            <div id="cart-container" class="cart-container">
+                <div id="cart-items"></div>
+                <button class="close-btn" onclick="toggleCart()">Fermer</button>
+            </div>
+            <div class="nos-produits">
+                <div class="produis">
+                    <img src="netflix.jpg" alt="NETFLIX" height="103px">
+                    <div class="tp">Netflix</div>
+                    <div class="prix">450 G</div>
+                    <button class="ajouter" onclick="addToCart('Netflix', 450)">Ajouter dans le panier</button>
+                </div>
+                <div class="produis">
+                    <img src="prime1.png" alt="Prime Video" height="100px">
+                    <div class="tp">Prime Video</div>
+                    <div class="prix">500 G</div>
+                    <button class="ajouter" onclick="addToCart('Prime Video', 500)">Ajouter dans le panier</button>
+                </div>
+                <div class="produis">
+                    <img src="crunchyroll.jpeg" alt="Crunchyroll" height="80px">
+                    <div class="tp">Crunchyroll</div>
+                    <div class="prix">500 G</div>
+                    <button class="ajouter" onclick="addToCart('Crunchyroll', 500)">Ajouter dans le panier</button>
+                </div>
+                <div class="produis">
+                    <img src="youtube.jpg" alt="YouTube">
+                    <div class="tp">YouTube</div>
+                    <div class="prix">400 G</div>
+                    <button class="ajouter" onclick="addToCart('YouTube', 400)">Ajouter dans le panier</button>
+                </div>
+                <div class="produis">
+                    <img src="Spotify.jpg" alt="Spotify" height="140px">
+                    <div class="tp">Spotify</div>
+                    <div class="prix">500 G</div>
+                    <button class="ajouter" onclick="addToCart('Spotify', 500)">Ajouter dans le panier</button>
+                </div>
+                <div class="produis">
+                    <img src="freefire.png" alt="Free Fire">
+                    <div class="tp">Free Fire</div>
+                    <div class="infos">Top up Freefire</div>
+                    <button class="ajouter"><a href="topupfreefire.html">Voir plus...</a></button>
+                </div>
+                <div class="produis">
+                    <img src="paypal.png" alt="PayPal" height="80px">
+                    <div class="tp">PayPal service</div>
+                    <div class="infos">Création de compte PayPal</div>
+                    <button class="ajouter"><a href="ServicePaypal.html">Voir plus...</a></button>
+                </div>
+                <div class="produis">
+                    <img src="visa.jpg" alt="VISA CARD">
+                    <div class="tp">VISA CARD</div>
+                    <div class="infos">Création de carte VISA </div>
+                    <button class="ajouter"><a href="creationVisaCard.html">Voir plus...</a></button>
+                </div>
+                <div class="produis">
+                    <img src="MC.jpg" alt="MasterCard">
+                    <div class="tp">MasterCard</div>
+                    <div class="infos">Création de MasterCard</div>
+                    <button class="ajouter"><a href="creationMasterCard.html">Voir plus...</a></button>
+                </div>
+                <div class="produis">
+                    <img src="gifcard.jpg" alt="GIFTED CARD">
+                    <br><br><br><br>
+                    <div class="infos">GIFT CARD</div>
+                    <button class="ajouter"><a href="giftedCard.html">Voir plus...</a></button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let cart = [];
+            
+            function addToCart(productName, productPrice) {
+                cart.push({ name: productName, price: productPrice });
+                document.getElementById('cart-count').textContent = cart.length;
+            }
+
+            function toggleCart() {
+                const cartContainer = document.getElementById('cart-container');
+                const cartItems = document.getElementById('cart-items');
+                if (cartContainer.style.display === 'none' || cartContainer.style.display === '') {
+                    cartItems.innerHTML = '';
+                    cart.forEach((item, index) => {
+                        cartItems.innerHTML += `<div class="cart-item">${item.name} - ${item.price} G</div>`;
+                    });
+                    cartContainer.style.display = 'block';
+                } else {
+                    cartContainer.style.display = 'none';
+                }
+            }
+            
+        </script>
+    </body>
+</html>
